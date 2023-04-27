@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site Uptime</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Consolas, monospace;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00ff00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            border-radius: 4px;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: #ffffff;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Site Uptime</h1>
+
+    <div class="container">
+        <p>Site launch date: <span id="launch-date"></span></p>
+        <p>Days since launch: <span id="uptime"></span></p>
+    </div>
+
+    <div class="result">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // Set the launch date
+        var launchDate = new Date("2023-04-23");
+
+        // Calculate the days since launch
+        var daysSinceLaunch = Math.floor((new Date() - launchDate) / (1000 * 60 * 60 * 24));
+
+        // Display the launch date and days since launch
+        document.getElementById("launch-date").innerHTML = launchDate.toLocaleDateString();
+        document.getElementById("uptime").innerHTML = daysSinceLaunch;
+
+        // Display the result message
+        if (daysSinceLaunch == 1) {
+            document.getElementById("result").innerHTML = "Congratulations! Your site has been up for 1 day.";
+        } else {
+            document.getElementById("result").innerHTML = "Congratulations! Your site has been up for " + daysSinceLaunch + " days.";
+        }
+    </script>
+</body>
+</html>

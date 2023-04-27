@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+    animation: pulse 2s ease-in-out infinite;
+    color: #f1f1f1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #ff4a53;
+    color: #18181b;
+}
+
+a {
+    color: inherit;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.main {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.author {
+    display: flex;
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in both;
+    align-items: center;
+    margin: 24px 0 0;
+    margin-bottom: 24px;
+}
+
+.author h1,
+.author p {
+    margin: 4px;
+}
+
+img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px 0;
+    margin-right: 8px;
+    border-radius: 15%;
+    width: 96px;
+    height: 96px;
+}
+
+.link-bar {
+    justify-content: center;
+    margin-top: -38px;
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in both;
+}
+
+.link-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.socials {
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    color: #868686;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+.social-logo {
+    display: flex;
+    margin: 4px;
+}
+ 
+
+@keyframes wipe-in {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+      background-color: #18181b;
+    }
+    50% {
+      background-color: #22222c;
+    }
+    100% {
+      background-color: #18181b;
+    }
+  }
+
+@media (max-width: 578px) {
+    .wrapper {
+        justify-content: center;
+        margin-bottom: 10vh;
+    }
+
+    .link-bar {
+        margin: 0;
+        margin-top: 10px;
+    }
+  
+    .link-row{
+      justify-content: space-between;
+    }
+  }
